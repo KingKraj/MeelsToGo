@@ -3,13 +3,18 @@ import React from "react";
 import { Searchbar } from "react-native-paper";
 import { StatusBar, StyleSheet, SafeAreaView, Text, View } from "react-native";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurant.screen";
+import { ThemeProvider } from "styled-components/native";
+import { theme } from "./src/infrastructure/theme";
 export default function App() {
   // const [searchQuery, setSearchQuery] = React.useState("");
 
   // const onChangeSearch = (query) => setSearchQuery(query);
   return (
     <>
-      <RestaurantsScreen />
+      <ThemeProvider theme={theme}>
+        <RestaurantsScreen />
+      </ThemeProvider>
+      <ExpoStatusBar style="auto" />
     </>
   );
 }
